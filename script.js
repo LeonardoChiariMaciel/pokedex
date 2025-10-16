@@ -45,7 +45,7 @@ voltar.addEventListener('click', async () => {
 
 proximo.addEventListener('click', async () => {
     let atualAnimal = Number(document.querySelector('.pokemon__number').textContent);
-    if (atualAnimal < 649) {
+    if (atualAnimal < 1024) {
         atualAnimal += 1;
         await renderizarPokemon(atualAnimal);
     }
