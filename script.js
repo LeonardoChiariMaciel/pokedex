@@ -19,7 +19,12 @@ async function renderizarPokemon(pokemon) {
         pokemonName.innerHTML += dados.name;
         pokemonNumber.innerHTML = '';
         pokemonNumber.innerHTML += dados.id
-        pokemonFoto.src = dados['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+        if (Number(document.querySelector('.pokemon__number').textContent) < 650) {
+            pokemonFoto.src = dados['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+        }
+        else {
+            pokemonFoto.src = dados['sprites']['other']['official-artwork']['front_default']
+        }
     }
     catch (error) {
         pokemonName.innerHTML = "Não encontrado"
