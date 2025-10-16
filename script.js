@@ -30,19 +30,6 @@ async function renderizarPokemon(pokemon) {
 
 renderizarPokemon(6);
 
-form.addEventListener('submit', async (event) => {
-    event.preventDefault()
-    await renderizarPokemon(input.value.toLowerCase());
-})
-
-voltar.addEventListener('click', async () => {
-    let atualAnimal = Number(document.querySelector('.pokemon__number').textContent);
-    if (atualAnimal > 1) {
-        atualAnimal -= 1;
-        await renderizarPokemon(atualAnimal);
-    }
-})
-
 voltar.addEventListener('click', async () => {
     let atualAnimal = Number(document.querySelector('.pokemon__number').textContent);
     if (atualAnimal > 1) {
@@ -57,4 +44,9 @@ proximo.addEventListener('click', async () => {
         atualAnimal += 1;
         await renderizarPokemon(atualAnimal);
     }
+})
+
+form.addEventListener('submit', async (event) => {
+    event.preventDefault()
+    await renderizarPokemon(input.value.toLowerCase());
 })
